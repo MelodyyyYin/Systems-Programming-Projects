@@ -1,0 +1,67 @@
+CS:APP Shell Lab
+=================
+
+This repository contains the tiny shell (`tsh`) for the CS:APP Shell Lab.
+The student implementation lives in `tsh.c`; the parser and job-list helpers
+are provided in `tsh_helper.{c,h}`.
+
+Repository layout
+-----------------
+
+- `tsh.c`: shell entry point, command execution, job control, and signal
+  handling.
+- `tsh_helper.{c,h}`: provided command parser and job-table utilities.
+- `csapp.{c,h}`: CS:APP support library.
+- `runtrace.c`, `wrapper.c`: driver and trace support.
+- `traces/`: official trace files used to validate the shell.
+- `testprogs/`: helper programs launched by the traces.
+
+Build and cleanup
+-----------------
+
+- `make`: build `tsh`, `runtrace`, and the helper programs.
+- `make clean`: remove generated binaries, objects, and temporary files.
+- `make handin`: create `tshlab-handin.tar` with the required hand-in files.
+
+Formatting
+----------
+
+- `make check-format`: verify the required formatting for `tsh.c`.
+- `make format`: apply the repository formatting rules to `tsh.c`.
+
+Run and verify
+--------------
+
+- `./tsh`: start the shell interactively.
+- `./sdriver 2 -s ./tsh`: run the official driver against `trace02.txt`.
+
+Current shell behavior
+----------------------
+
+The implementation in `tsh.c` currently covers:
+
+- prompt display and EOF exit
+- `quit`
+- foreground and background jobs
+- `jobs`
+- `bg` and `fg` with PID or `%JID`
+- `SIGCHLD`, `SIGINT`, and `SIGTSTP` handling
+- `<` and `>` redirection for external commands
+- `jobs > file`
+
+Reproducible checks in this repo
+--------------------------------
+
+The commands below are the concrete checks that can be reproduced locally in
+this repository:
+
+- `make`
+- `make check-format`
+- `./sdriver 2 -s ./tsh`
+
+Notes
+-----
+
+- `trace10` is not part of the active trace set in this repo.
+- Generated files such as `*.o`, `tsh`, `runtrace`, and `tshlab-handin.tar`
+  are build outputs and should not be committed.
