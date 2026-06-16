@@ -1,22 +1,25 @@
 # Systems Programming Projects
 
-This repository collects my major 18-613 systems programming labs in one place:
+Selected systems programming work from 18-613, grouped into one portfolio repository.
 
-- `cache-lab/`
-- `proxy-lab/`
-- `malloc-lab/`
-- `shell-lab/`
+## Projects
 
-Each directory keeps the implementation code, build files, and a small set of notes or demo docs that are useful for review. Generated binaries and handin archives were intentionally removed so the repository stays clean and readable.
+| Project | Focus | Highlights |
+| --- | --- | --- |
+| [Cache Lab](cache-lab) | Caching and data locality | Cache simulator, trace parsing, blocked matrix transpose, performance-oriented tuning |
+| [Proxy Lab](proxy-lab) | Networked systems | Concurrent HTTP proxy, request forwarding, response caching, LRU eviction |
+| [Malloc Lab](malloc-lab) | Memory allocation | Explicit allocator, heap management, trace-based tuning, throughput/utilization work |
+| [Shell Lab](shell-lab) | Process control | Tiny shell, job control, signal handling, trace-driven validation |
 
-## What is included
+## What to look at
 
-- Cache lab: cache simulator and transpose optimizer
-- Proxy lab: concurrent web proxy with caching
-- Malloc lab: explicit allocator implementation and tuning notes
-- Shell lab: tiny shell with job control and helper utilities
+- `cache-lab/trans.c` for transpose strategy work
+- `proxy-lab/proxy.c` for the concurrent cached proxy
+- `malloc-lab/mm.c` for allocator logic
+- `shell-lab/tsh.c` for shell and job-control behavior
 
 ## Notes
 
-- The `shell-lab/` directory is the extra lab you remembered.
-- Folder names were normalized so the projects can live together in one repository.
+- The extra lab you remembered is `shell-lab`.
+- Generated binaries, handin archives, and scratch outputs were removed so the repository stays readable as a portfolio piece.
+- Each subdirectory keeps its own lab-specific documentation and build files.
